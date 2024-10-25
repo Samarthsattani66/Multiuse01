@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TEAMROHITOFFICAL45 _LIVE</title>
+  <script src="https://content.jwplatform.com/libraries/KB5zFt7A.js"></script>
+  <style>
+    body {
+      margin: 0;
+    }
+
+    .jwplayer {
+      position: absolute !important;
+    }
+
+    #video-selector {
+      margin: 10px;
+    }
+
+    #language-switch {
+      padding: 10px 20px;
+      background-color: #007bff; /* Blue color, you can change this */
+      color: #fff; /* White text color */
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin: 10px;
+      transition: background-color 0.3s ease;
+    }
+
+    #language-switch:hover {
+      background-color: #0056b3; /* Darker blue on hover */
+    }
+  </style>
+</head>
+<body>
+  <br>
+  <select id="video-select">
+    <option value="ENGLISH_1" selected="">Feed 1</option>
+    <option value="HINDI_2">Feed 2</option>
+    <option value="HARYANWI_3">Feed 3</option>
+    <option value="BHOJPURI_4">Feed 4</option>
+    <option value="TELGU_5">Feed 5</option>
+    <option value="TAMIL_6">Feed 6</option>
+    <option value="BENGALI_7">Feed 7</option>
+    <option value="KANADA_8">Feed 8</option>
+  
+  </select>
+
+  <button id="language-switch">Select Your Feed Here</button>
+
+  <div id="video"></div>
+
+  <script>if(confirm("Join Our Telegram Channel @livecrichdofficial")) { window.location.href = "https://telegram.me/livecrichdofficial" }
+    document.addEventListener("DOMContentLoaded", function() {
+      var videoSources = {
+      "ENGLISH_1": "https://prod-sports-eng-cf.jiocinema.com/hls/live/2100305/uhd_akamai_ctv_avc_eng_indvsnz_261024/index.m3u8",      
+      "HINDI_2": "https://prod-sports-hin-cf.jiocinema.com/hls/live/2100320/uhd_akamai_ctv_avc_hin_indvsnz_261024/index.m3u8",
+      "HARYANWI_3": "https://prod-sports-south-gm.jiocinema.com/hls/live/2109697/uhd_akamai_ctv_avc_odia_indvsnz_261024/master.m3u8",
+      "BHOJPURI_4": "https://prod-sports-north-gm.jiocinema.com/hls/live/2109758/uhd_akamai_ctv_avc_bhoj_indvsnz_261024/master.m3u8",
+      "TELGU_5": "https://prod-sports-south-gm.jiocinema.com/hls/live/2109715/uhd_akamai_ctv_avc_tel_indvsnz_261024/master.m3u8",
+      "TAMIL_6": "https://prod-sports-south-cf.jiocinema.com/hls/live/2109709/uhd_akamai_ctv_avc_tam_indvsnz_261024/master.m3u8",
+      "BENGALI_7": "https://prod-sports-north-cf.jiocinema.com/hls/live/2109771/uhd_akamai_ctv_avc_ben_indvsnz_261024/master.m3u8",        
+      "KANADA_8": "https://prod-sports-south-gm.jiocinema.com/hls/live/2109721/uhd_akamai_ctv_avc_kan_indvsnz_261024/master.m3u8",
+     
+    };
+
+      var playerInstance = jwplayer("video");
+
+      document.getElementById("video-select").addEventListener("change", function() {
+        var selectedValue = this.value;
+        var videoSource = videoSources[selectedValue];
+
+        playerInstance.load([{ file: videoSource }]);
+        playerInstance.play();
+      });
+
+      document.getElementById("language-switch").addEventListener("click", function() {
+        var selectedValue = document.getElementById("video-select").value;
+        var currentIndex = Object.keys(videoSources).indexOf(selectedValue);
+        var nextIndex = (currentIndex + 1) % Object.keys(videoSources).length;
+        var nextLanguage = Object.keys(videoSources)[nextIndex];
+        document.getElementById("video-select").value = nextLanguage;
+
+        var videoSource = videoSources[nextLanguage];
+        playerInstance.load([{ file: videoSource }]);
+        playerInstance.play();
+      });
+
+      var selectedValue = document.getElementById("video-select").value;
+      var videoSource = videoSources[selectedValue];
+
+      playerInstance.setup({
+        autostart: true,
+        mute: false,
+        playlist: [{ file: videoSource }]
+      });
+    });
+  </script>
+
+  <div style="background-color: #0074d9; text-align: center; padding: 10px;">
+    <a href="https://t.me/+avV8vpMfkOJmZDhl" target="_blank">
+      <button id="joinTelegramButton" style="background-color: #fff; color: #0074d9; border: 2px solid #0074d9; padding: 5px 10px;">JOIN TELEGRAM</button>
+    </a>
+  </div>
+
+</body>
+</html>
