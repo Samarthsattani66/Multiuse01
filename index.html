@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -59,14 +59,15 @@
     
     document.addEventListener("DOMContentLoaded", function() {
       var videoSources = {
-        "ENGLISH_1": "https://prod-sports-eng-cf.jiocinema.com/hls/live/2112598/uhdakamaictvavcssaispotindvssaengm1101124__5d882b6b-a27f-456c-bec2-abd8ed895cf2/master.m3u8",      
-        "HINDI_2": "https://prod-sports-hin-cf.jiocinema.com/hls/live/2100324/uhdakamaictvavcssaispotindvssahinm1101124__5d882b6b-a27f-456c-bec2-abd8ed895cf2/master.m3u8",
-        "HARYANWI_3": "https://prod-sports-south-cf.jiocinema.com/hls/live/2109514/uhdakamaictvavcssaispotindvssaodiam1101124__5d882b6b-a27f-456c-bec2-abd8ed895cf2/master.m3u8",
-        "BHOJPURI_4": "https://prod-sports-north-gm.jiocinema.com/hls/live/2109729/uhdakamaictvavcssaispotindvssabhojm1101124__5d882b6b-a27f-456c-bec2-abd8ed895cf2/master.m3u8",
-        "TELGU_5": "https://prod-sports-south-cf.jiocinema.com/hls/live/2109685/uhdakamaictvavcssaispotindvssatelm1101124__5d882b6b-a27f-456c-bec2-abd8ed895cf2/master.m3u8",
-        "TAMIL_6": "https://prod-sports-south-cf.jiocinema.com/hls/live/2109679/uhdakamaictvavcssaispotindvssatamm1101124__5d882b6b-a27f-456c-bec2-abd8ed895cf2/master.m3u8",
-        "BENGALI_7": "https://prod-sports-south-gm.jiocinema.com/hls/live/2109691/uhdakamaictvavcssaispotindvssakanm1101124__5d882b6b-a27f-456c-bec2-abd8ed895cf2/master.m3u8",        
-        "KANADA_8": "https://prod-sports-south-gm.jiocinema.com/hls/live/2109691/uhdakamaictvavcssaispotindvssakanm1101124__5d882b6b-a27f-456c-bec2-abd8ed895cf2/master.m3u8",
+        "ENGLISH_1": "https://prod-sports-eng-cf.jiocinema.com/hls/live/2112598/uhd__akamai__ctv__avc__ssaispot__indvssa__eng__m1__131124__a6e29896-58b2-4487-9635-a7fa5a99e517/master.m3u8",      
+        "HINDI_2": "https://prod-sports-hin-cf.jiocinema.com/hls/live/2100324/uhd__akamai__ctv__avc__ssaispot__indvssa__hin__m1__131124__a6e29896-58b2-4487-9635-a7fa5a99e517/master.m3u8",
+        "HARYANWI_3": "https://prod-sports-south-cf.jiocinema.com/hls/live/2109514/uhd__akamai__ctv__avc__ssaispot__indvssa__odia__m1__131124__a6e29896-58b2-4487-9635-a7fa5a99e517/master.m3u8",
+        "BHOJPURI_4": "https://prod-sports-south-cf.jiocinema.com/hls/live/2109514/uhd__akamai__ctv__avc__ssaispot__indvssa__odia__m1__131124__a6e29896-58b2-4487-9635-a7fa5a99e517/master.m3u8",
+        "TELGU_5": "https://prod-sports-south-cf.jiocinema.com/hls/live/2109679/uhd__akamai__ctv__avc__ssaispot__indvssa__tam__m1__131124__a6e29896-58b2-4487-9635-a7fa5a99e517/master.m3u8",
+        "TAMIL_6": "https://prod-sports-south-cf.jiocinema.com/hls/live/2109679/uhd__akamai__ctv__avc__ssaispot__indvssa__tam__m1__131124__a6e29896-58b2-4487-9635-a7fa5a99e517/master_720p.m3u8",
+        "BENGALI_7": "https://prod-sports-north-cf.jiocinema.com/hls/live/2109741/uhd__akamai__ctv__avc__ssaispot__indvssa__ben__m1__131124__a6e29896-58b2-4487-9635-a7fa5a99e517/master_.m3u8",        
+        "KANADA_8": "https://prod-sports-south-gm.jiocinema.com/hls/live/2109691/uhd__akamai__ctv__avc__ssaispot__indvssa__kan__m1__131124__a6e29896-58b2-4487-9635-a7fa5a99e517/master.m3u8
+",
       };
 
       var playerInstance = jwplayer("video");
