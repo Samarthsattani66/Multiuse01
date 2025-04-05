@@ -38,18 +38,18 @@
 <body>
   <br>
   <select id="video-select">
-    <option value="ENGLISH_1" selected>ENGLISH 1</option>
-    <option value="HINDI_2">HINDI 2</option>
-    <option value="HARYANWI_3">HARYANWI 3</option>
-    <option value="BHOJPURI_4">BHOJPURI 4</option>
-    <option value="TELGU_5">TELUGU 5</option>
-    <option value="TAMIL_6">TAMIL 6</option>
-    <option value="BENGALI_7">BENGALI 7</option>
-    <option value="KANADA_8">KANNADA 8</option>
-    <option value="PUNJABI_9">PUNJABI 9</option>
-    <option value="GUJRATI_10">GUJRATI 10</option>
-    <option value="MALAYALAM_11">MALAYALAM 11</option> <!-- Added Malayalam -->
-    <option value="MARATHI_12">MARATHI 12</option> <!-- Added Marathi -->
+    <option value="ENGLISH" selected>ENGLISH</option>
+    <option value="HINDI">HINDI</option>
+    <option value="HARYANWI">HARYANWI</option>
+    <option value="BHOJPURI">BHOJPURI</option>
+    <option value="TELUGU">TELUGU</option>
+    <option value="TAMIL">TAMIL</option>
+    <option value="BENGALI">BENGALI</option>
+    <option value="KANADA">KANNADA</option>
+    <option value="PUNJABI">PUNJABI</option>
+    <option value="GUJRATI">GUJRATI</option>
+    <option value="MALAYALAM">MALAYALAM</option>
+    <option value="MARATHI">MARATHI</option>
   </select>
 
   <button id="language-switch">Select Your Feed Here</button>
@@ -64,18 +64,18 @@
 
     document.addEventListener("DOMContentLoaded", function() {
       var videoSources = {
-        "ENGLISH_1": "https://prod-ent-live-gm.jiocinema.com/bpk-tv/JS_M1_IPL25_ENG_IDC_MOB/Fallback/index.m3u8",      
-        "HINDI_2": "https://prod-ent-live-gm.jiocinema.com/bpk-tv/JS_M1_IPL25_HIN_IDC_MOB/Fallback/index.m3u8",
-        "HARYANWI_3": "https://prod-ent-live-gm.jiocinema.com/bpk-tv/JS_M1_IPL25_HAR_IDC_MOB/Fallback/index.m3u8",
-        "BHOJPURI_4": "https://prod-ent-live-gm.jiocinema.com/bpk-tv/JS_M1_IPL25_Bhoj_IDC_MOB/Fallback/index.m3u8",
-        "TELGU_5": "https://prod-ent-live-gm.jiocinema.com/bpk-tv/JS_M1_IPL25_TEL_IDC_MOB/Fallback/index.m3u8",
-        "TAMIL_6": "https://prod-ent-live-gm.jiocinema.com/bpk-tv/JS_M1_IPL25_TAM_IDC_MOB/Fallback/index.m3u8",
-        "BENGALI_7": "https://prod-ent-live-gm.jiocinema.com/bpk-tv/JS_M1_IPL25_BEN_IDC_MOB/Fallback/index.m3u8",        
-        "KANADA_8": "https://prod-ent-live-gm.jiocinema.com/bpk-tv/JS_M1_IPL25_KAN_IDC_MOB/Fallback/index.m3u8",
-        "PUNJABI_9": "https://prod-ent-live-gm.jiocinema.com/bpk-tv/JS_M1_IPL25_Punj_IDC_MOB/Fallback/index.m3u8",
-        "GUJRATI_10": "https://prod-ent-live-gm.jiocinema.com/bpk-tv/JS_M1_IPL25_Guj_IDC_MOB/Fallback/index.m3u8",
-        "MALAYALAM_11": "https://prod-ent-live-gm.jiocinema.com/bpk-tv/JS_M1_IPL25_MAL_IDC_MOB/Fallback/index.m3u8",  // Added Malayalam
-        "MARATHI_12": "https://prod-ent-live-gm.jiocinema.com/bpk-tv/JS_M1_IPL25_MAR_IDC_MOB/Fallback/index.m3u8"  // Added Marathi
+        "ENGLISH": "https://prod-ent-live-cf.jiocinema.com/bpk-tv/JS_M1_IPL25_ENG_IDC_MOB/Fallback/index.m3u8",
+        "HINDI": "https://prod-ent-live-cf.jiocinema.com/bpk-tv/JS_M1_IPL25_HIN_IDC_MOB/Fallback/index.m3u8",
+        "HARYANWI": "https://prod-ent-live-cf.jiocinema.com/bpk-tv/JS_M1_IPL25_HAR_IDC_MOB/Fallback/index.m3u8",
+        "BHOJPURI": "https://prod-ent-live-cf.jiocinema.com/bpk-tv/JS_M1_IPL25_Bhoj_IDC_MOB/Fallback/index.m3u8",
+        "TELUGU": "https://prod-ent-live-cf.jiocinema.com/bpk-tv/JS_M1_IPL25_TEL_IDC_MOB/Fallback/index.m3u8",
+        "TAMIL": "https://prod-ent-live-cf.jiocinema.com/bpk-tv/JS_M1_IPL25_TAM_IDC_MOB/Fallback/index.m3u8",
+        "BENGALI": "https://prod-ent-live-cf.jiocinema.com/bpk-tv/JS_M1_IPL25_BEN_IDC_MOB/Fallback/index.m3u8",
+        "KANADA": "https://prod-ent-live-cf.jiocinema.com/bpk-tv/JS_M1_IPL25_KAN_IDC_MOB/Fallback/index.m3u8",
+        "PUNJABI": "https://prod-ent-live-cf.jiocinema.com/bpk-tv/JS_M1_IPL25_Punj_IDC_MOB/Fallback/index.m3u8",
+        "GUJRATI": "https://prod-ent-live-cf.jiocinema.com/bpk-tv/JS_M1_IPL25_Guj_IDC_MOB/Fallback/index.m3u8",
+        "MALAYALAM": "https://prod-ent-live-cf.jiocinema.com/bpk-tv/JS_M1_IPL25_Mal_IDC_MOB/Fallback/index.m3u8",
+        "MARATHI": "https://prod-ent-live-cf.jiocinema.com/bpk-tv/JS_M1_IPL25_MAR_IDC_MOB/Fallback/index.m3u8"
       };
 
       var playerInstance = jwplayer("video");
