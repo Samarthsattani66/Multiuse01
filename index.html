@@ -1,124 +1,123 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>TEAMROHITOFFICIAL45 _LIVE</title>
-  <script src="https://content.jwplatform.com/libraries/KB5zFt7A.js"></script>
   <style>
     body {
       margin: 0;
+      background-color: #000;
+      color: #fff;
+      font-family: Arial, sans-serif;
     }
 
-    .jwplayer {
-      position: absolute !important;
+    #controls {
+      padding: 10px;
+      background-color: #1a1a1a;
+      display: flex;
+      align-items: center;
+      gap: 10px;
     }
 
-    #video-selector {
-      margin: 10px;
-    }
-
-    #language-switch {
-      padding: 10px 20px;
-      background-color: #007bff; /* Blue color */
-      color: #fff; /* White text color */
+    select, button {
+      padding: 8px 12px;
+      font-size: 16px;
       border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      margin: 10px;
-      transition: background-color 0.3s ease;
+      border-radius: 4px;
     }
 
-    #language-switch:hover {
-      background-color: #0056b3; /* Darker blue on hover */
+    button {
+      background-color: #007bff;
+      color: #fff;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    #player-frame {
+      width: 100%;
+      height: calc(100vh - 60px);
+      border: none;
+    }
+
+    .telegram-bar {
+      background-color: #0074d9;
+      text-align: center;
+      padding: 10px;
+    }
+
+    .telegram-bar a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
     }
   </style>
 </head>
 <body>
-  <br>
-  <select id="video-select">
-    <option value="ENGLISH" selected>ENGLISH</option>
-    <option value="HINDI">HINDI</option>
-    <option value="HARYANWI">HARYANWI</option>
-    <option value="BHOJPURI">BHOJPURI</option>
-    <option value="TELUGU">TELUGU</option>
-    <option value="TAMIL">TAMIL</option>
-    <option value="BENGALI">BENGALI</option>
-    <option value="KANADA">KANNADA</option>
-    <option value="PUNJABI">PUNJABI</option>
-    <option value="GUJRATI">GUJRATI</option>
-    <option value="MALAYALAM">MALAYALAM</option>
-    <option value="MARATHI">MARATHI</option>
-  </select>
 
-  <button id="language-switch">Select Your Feed Here</button>
+  <div id="controls">
+    <label for="stream-select">Choose Feed:</label>
+    <select id="stream-select">
+      <option value="eng" selected>English</option>
+      <option value="hin">Hindi</option>
+      <option value="tam">Tamil</option>
+      <option value="tel">Telugu</option>
+      <option value="ben">Bengali</option>
+      <option value="guj">Gujarati</option>
+      <option value="bho">Bhojpuri</option>
+      <option value="batter_cam">Batter Cam</option>
+      <option value="field_view_cam">Field View</option>
+      <option value="hero_cam">Hero Cam</option>
+      <option value="stump_cam">Stump Cam</option>
+    </select>
+    <button id="next-feed">Next Feed</button>
+  </div>
 
-  <div id="video"></div>
+  <iframe id="player-frame" src="https://p.apeiria.net/~Teamrom3u8plyr.html?id=https://psplayflix.site/2025/ps_ipl-liv.m3u8?ps=eng" allowfullscreen></iframe>
+
+  <div class="telegram-bar">
+    <a href="https://t.me/+avV8vpMfkOJmZDhl" target="_blank">Join Our Telegram Channel @TEAMROHITOFFICIAL45_LIVE</a>
+  </div>
 
   <script>
-    // Prompt for joining Telegram channel
-    if (confirm("Join Our Telegram Channel @TEAMROHITOFFICIAL45_LIVE")) {
-      window.location.href = "https://t.me/+avV8vpMfkOJmZDhl";
+    const streamSelect = document.getElementById('stream-select');
+    const playerFrame = document.getElementById('player-frame');
+    const nextFeedBtn = document.getElementById('next-feed');
+
+    const streamOptions = [
+      { label: 'English', value: 'eng' },
+      { label: 'Hindi', value: 'hin' },
+      { label: 'Tamil', value: 'tam' },
+      { label: 'Telugu', value: 'tel' },
+      { label: 'Bengali', value: 'ben' },
+      { label: 'Gujarati', value: 'guj' },
+      { label: 'Bhojpuri', value: 'bho' },
+      { label: 'Batter Cam', value: 'batter_cam' },
+      { label: 'Field View', value: 'field_view_cam' },
+      { label: 'Hero Cam', value: 'hero_cam' },
+      { label: 'Stump Cam', value: 'stump_cam' }
+    ];
+
+    function updatePlayerStream(psValue) {
+      const streamUrl = `https://psplayflix.site/2025/ps_ipl-liv.m3u8?ps=${psValue}`;
+      const playerUrl = `https://p.apeiria.net/~Teamrom3u8plyr.html?id=${encodeURIComponent(streamUrl)}`;
+      playerFrame.src = playerUrl;
     }
 
-    document.addEventListener("DOMContentLoaded", function() {
-      var videoSources = {
-        "ENGLISH": "https://prod-ent-live-cf.jiocinema.com/bpk-tv/JS_M1_IPL25_ENG_IDC_MOB/Fallback/index.m3u8",
-        "HINDI": "https://prod-ent-live-cf.jiocinema.com/bpk-tv/JS_M1_IPL25_HIN_IDC_MOB/Fallback/index.m3u8",
-        "HARYANWI": "https://prod-ent-live-cf.jiocinema.com/bpk-tv/JS_M1_IPL25_HAR_IDC_MOB/Fallback/index.m3u8",
-        "BHOJPURI": "https://prod-ent-live-cf.jiocinema.com/bpk-tv/JS_M1_IPL25_Bhoj_IDC_MOB/Fallback/index.m3u8",
-        "TELUGU": "https://prod-ent-live-cf.jiocinema.com/bpk-tv/JS_M1_IPL25_TEL_IDC_MOB/Fallback/index.m3u8",
-        "TAMIL": "https://prod-ent-live-cf.jiocinema.com/bpk-tv/JS_M1_IPL25_TAM_IDC_MOB/Fallback/index.m3u8",
-        "BENGALI": "https://prod-ent-live-cf.jiocinema.com/bpk-tv/JS_M1_IPL25_BEN_IDC_MOB/Fallback/index.m3u8",
-        "KANADA": "https://prod-ent-live-cf.jiocinema.com/bpk-tv/JS_M1_IPL25_KAN_IDC_MOB/Fallback/index.m3u8",
-        "PUNJABI": "https://prod-ent-live-cf.jiocinema.com/bpk-tv/JS_M1_IPL25_Punj_IDC_MOB/Fallback/index.m3u8",
-        "GUJRATI": "https://prod-ent-live-cf.jiocinema.com/bpk-tv/JS_M1_IPL25_Guj_IDC_MOB/Fallback/index.m3u8",
-        "MALAYALAM": "https://prod-ent-live-cf.jiocinema.com/bpk-tv/JS_M1_IPL25_Mal_IDC_MOB/Fallback/index.m3u8",
-        "MARATHI": "https://prod-ent-live-cf.jiocinema.com/bpk-tv/JS_M1_IPL25_MAR_IDC_MOB/Fallback/index.m3u8"
-      };
+    streamSelect.addEventListener('change', () => {
+      updatePlayerStream(streamSelect.value);
+    });
 
-      var playerInstance = jwplayer("video");
-
-      // Event listener for language change from the dropdown
-      document.getElementById("video-select").addEventListener("change", function() {
-        var selectedValue = this.value;
-        var videoSource = videoSources[selectedValue];
-
-        playerInstance.load([{ file: videoSource }]);
-        playerInstance.play();
-      });
-
-      // Event listener for switching to the next language on button click
-      document.getElementById("language-switch").addEventListener("click", function() {
-        var selectedValue = document.getElementById("video-select").value;
-        var currentIndex = Object.keys(videoSources).indexOf(selectedValue);
-        var nextIndex = (currentIndex + 1) % Object.keys(videoSources).length;
-        var nextLanguage = Object.keys(videoSources)[nextIndex];
-        document.getElementById("video-select").value = nextLanguage;
-
-        var videoSource = videoSources[nextLanguage];
-        playerInstance.load([{ file: videoSource }]);
-        playerInstance.play();
-      });
-
-      // Set up the player with the initial language
-      var selectedValue = document.getElementById("video-select").value;
-      var videoSource = videoSources[selectedValue];
-
-      playerInstance.setup({
-        autostart: true,
-        mute: false,
-        playlist: [{ file: videoSource }]
-      });
+    nextFeedBtn.addEventListener('click', () => {
+      let currentIndex = streamOptions.findIndex(option => option.value === streamSelect.value);
+      currentIndex = (currentIndex + 1) % streamOptions.length;
+      streamSelect.value = streamOptions[currentIndex].value;
+      updatePlayerStream(streamSelect.value);
     });
   </script>
-
-  <div style="background-color: #0074d9; text-align: center; padding: 10px;">
-    <a href="https://t.me/+avV8vpMfkOJmZDhl" target="_blank">
-      <button id="joinTelegramButton" style="background-color: #fff; color: #0074d9; border: 2px solid #0074d9; padding: 5px 10px;">JOIN TELEGRAM</button>
-    </a>
-  </div>
 
 </body>
 </html>
