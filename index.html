@@ -76,7 +76,7 @@
     <button id="next-feed">Next Feed</button>
   </div>
 
-  <iframe id="player-frame" src="https://p.apeiria.net/~Teamrom3u8plyr.html?id=https%3A%2F%2Fpstvplaylive.online%2F2025%2Fps_ipl-liv.m3u8%3Fps%3Deng" allowfullscreen></iframe>
+  <iframe id="player-frame" src="https://p.apeiria.net/~Teamrom3u8plyr.html?id=https://psplay.site/2025/ps_ipl-liv.m3u8?ps=eng" allowfullscreen></iframe>
 
   <div class="telegram-bar">
     <a href="https://t.me/+avV8vpMfkOJmZDhl" target="_blank">Join Our Telegram Channel @TEAMROHITOFFICIAL45_LIVE</a>
@@ -102,9 +102,8 @@
     ];
 
     function updatePlayerStream(psValue) {
-      const streamUrl = `https://psplay.site/2025/ps_ipl-liv.m3u8?ps=${psValue}`;
-      const playerUrl = `https://p.apeiria.net/~Teamrom3u8plyr.html?id=${encodeURIComponent(streamUrl)}`;
-      playerFrame.src = playerUrl;
+      const streamUrl = `https://p.apeiria.net/~Teamrom3u8plyr.html?id=https://psplay.site/2025/ps_ipl-liv.m3u8?ps=${psValue}`;
+      playerFrame.src = streamUrl;
     }
 
     streamSelect.addEventListener('change', () => {
